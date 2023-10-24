@@ -38,13 +38,13 @@ function init() {
 
 function writeToSVG(fileName, input) {
     return new Promise((resolve, reject) => {
-        fs.writeFile(`${fileName}.svg`, input, err => {
+        fs.writeFile('logo.svg', input, err => {
             if (err) {
                 reject(err);
                 return;
             } resolve({
                 ok: true,
-                message: console.log("New file created")
+                message: console.log("Generated logo.svg")
             })
         })
     })
@@ -58,7 +58,15 @@ function makeSVG(input) {
         <text x="150" y="125" font-size="60" text-anchor="middle" fill="${input['color-txt']}">${input['text']}</text>
     </svg>`;
     } else if (input['shape'] === "triangle") {
-        return ``
+        return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="150,20 70,180 230,180" fill="${input['main-color']}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${input['color-txt']}">${input['text']}</text>
+    </svg>`;
+    } else if (input['shape'] === "square") {
+        return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="80" y="30" width="150" height="150" fill="${input['main-color']}"/>
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${input['color-txt']}">${input['text']}</text>
+    </svg>`;
     }
 }
 
