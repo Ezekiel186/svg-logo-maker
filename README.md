@@ -9,7 +9,7 @@ they can install it by using npm install [github repo]
 ## Usage
 This project can be used to make SVG logos. To make the logos open up terminal and type in 'node index.js', then fill out the questions. When all the questions are answered correctly a SVG file would be made in the folder. 
 
-<video src="tutorial-svg.mp4" controls title="Title"></video>
+<video src="./tutorial-svg.mp4" controls title="Title"></video>
 
 ## License
 None
